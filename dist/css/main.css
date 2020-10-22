@@ -5,6 +5,7 @@
     left: 16px;
     transform: translateY(-130%);
     transition: transform .26s ease-in-out;
+    z-index: 1;
 }
 
 .cookies.message {
@@ -35,9 +36,6 @@
       #732982 83.25%,
       #732982 100%,
       #E7484F 100%
-     
-     
-     
     );
   animation:slidebg 2s linear infinite;
 }
@@ -58,15 +56,40 @@
         #732982 83.25%,
         #732982 100%,
         #E7484F 100%
-       
-       
-       
       );
     animation:slidebg 2s linear infinite;
+}
+
+#dainis {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+#dainis.shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 @keyframes slidebg {
     to {
       background-position:20vw;
+    }
+  }
+
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
     }
   }

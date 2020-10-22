@@ -9,9 +9,29 @@
     if (!hasCookie) {
         d.querySelector('.cookies').classList.add('active');
     }
+
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            // call on next available tick
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }  
     
     function closeCookieNotice() {
         d.querySelector('.cookies').classList.remove('active');
+    }
+
+    function shakeDainis() {
+        var dainis = d.getElementById('dainis');
+
+        dainis.classList.add('shake');
+
+        setTimeout(function () {
+            dainis.classList.remove('shake');
+        }, 1000);
     }
 
     d.getElementById('js-reject-cookies').onclick = closeCookieNotice;
@@ -35,4 +55,10 @@
             }
         }, 50);
     }
+
+    docReady(function () {
+        shakeDainis();
+
+        setInterval(shakeDainis, 7 * 1000);
+    })
 })(window, document);
