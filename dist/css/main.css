@@ -1,0 +1,12 @@
+.cookies {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    transform: translateY(-130%);
+    transition: transform .26s ease-in-out;
+}
+
+.cookies.active {
+    transform: translateY(0);
+}
