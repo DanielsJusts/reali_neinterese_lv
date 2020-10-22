@@ -13,22 +13,25 @@
   <link rel="icon" href="img/nice.png" type="image/png"/>
   <link rel="shortcut icon" href="img/nice.png" type="image/png"/>
 </head>
-<body>
-    <div class="notification is-info is-light cookies">
-        <h4><strong>Uzmanību</strong></h4>
-        <button class="delete" id="js-reject-cookies"></button>
-        Mums neinteresē tavi dati, dari ko gribi
-        <div style="margin-top: 16px;"><button class="button is-dark" id="js-accept-cookies">Neinteresē</button></div>
-    
+<body class="has-background-black">
+    <div class="message cookies is-small">
+        <div class="message-header">
+            <p>Uzmanību</p>
+            <button class="delete" id="js-reject-cookies" aria-label="delete"></button>
+          </div>
+          <div class="message-body">
+              <p>
+                Mums neinteresē tavi dati, dari ko gribi
+              </p>
+              <div style="margin-top: 16px;"><button class="button is-dark is-small accept-cookies" id="js-accept-cookies">Neinteresē</button></div>
+          </div>
       </div>
     <section class="hero is-fullheight">
         <div class="hero-body">
           <div class="container has-text-centered">
               <div class="columns">
                   <div class="column is-two-fifths" style="margin: 0 auto;">
-                    <div class="card">
-                        <img src="img/nice.png" />
-                    </div>
+                    <img src="img/nice.png" />
                   </div>
               </div>
           </div>

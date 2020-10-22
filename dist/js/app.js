@@ -2,7 +2,7 @@
     var hasCookie;
 
     try {
-        hasCookie = localStorage.getItem('cookie-accepted') === 'yes';
+        hasCookie = sessionStorage.getItem('cookie-accepted') === 'yes';
     } catch (e) {}
 
     if (!hasCookie) {
@@ -17,10 +17,12 @@
 
 
     d.getElementById('js-accept-cookies').onclick = function (e) {
+        e.target.classList.add('rainbow');
+
         try {
-            localStorage.setItem('cookie-accepted', 'yes');
+            sessionStorage.setItem('cookie-accepted', 'yes');
         } catch (e) {}
 
-        closeCookieNotice();
+        setTimeout(closeCookieNotice, 1.5 * 1000);
     }
 })(window, document);
