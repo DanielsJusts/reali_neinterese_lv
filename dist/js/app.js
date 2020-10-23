@@ -59,6 +59,6 @@
     docReady(function () {
         shakeDainis();
 
-        setInterval(shakeDainis, 7 * 1000);
+        setInterval(shakeDainis, 5 * 1000);
     })
 })(window, document);
